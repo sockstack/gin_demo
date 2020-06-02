@@ -2,6 +2,7 @@ package api
 
 import (
 	"cn.sockstack/gin_demo/requests"
+	"cn.sockstack/gin_demo/services/hello"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -18,7 +19,14 @@ func Test(c *gin.Context)  {
 		c.JSON(http.StatusOK, gin.H{"error": requests.Translate(err)})
 		return
 	}
+	//调用HelloService
+	var service hello.HelloContract
 
-	//校验通过，返回请求参数
-	c.JSON(http.StatusOK, gin.H{"params": testStruct})
+	//这里使用的是接口定义了变量
+	service = &hello.HelloService{}
+	//调用服务的方法处理业务
+	result := service.SayHello(testStruct.Username)
+
+	//返回响应
+	c.JSON(http.StatusOK, gin.H{"data": result})
 }
