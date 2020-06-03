@@ -10,10 +10,10 @@ import (
 var Gin  = gin.Default()
 
 func Run()  {
-	//设置运行模式
-	setMode()
 	//启动初始化
 	bootInit()
+	//设置运行模式
+	setMode()
 
 	//注册路由
 	routers.Init(Gin)
