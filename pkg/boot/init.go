@@ -6,10 +6,12 @@ import (
 	"cn.sockstack/gin_demo/routers"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"log"
 )
 var Gin  = gin.Default()
 
 func Run()  {
+	panicHandle()
 	//启动初始化
 	bootInit()
 	//设置运行模式
@@ -42,4 +44,12 @@ func setMode()  {
 
 func close()  {
 	models.Close()
+}
+
+func panicHandle()  {
+	defer func() {
+		if err := recover(); err != nil {
+			log.Fatal(err)
+		}
+	}()
 }
