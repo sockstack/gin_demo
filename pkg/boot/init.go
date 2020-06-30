@@ -1,6 +1,7 @@
 package boot
 
 import (
+	"cn.sockstack/gin_demo/docs"
 	"cn.sockstack/gin_demo/models"
 	"cn.sockstack/gin_demo/pkg/config"
 	"cn.sockstack/gin_demo/routers"
@@ -33,6 +34,7 @@ func Run()  {
 
 func bootInit()  {
 	models.Init()
+	swaggerInit()
 }
 
 func setMode()  {
@@ -40,6 +42,15 @@ func setMode()  {
 		gin.SetMode(gin.ReleaseMode)
 		models.DB.LogMode(true)
 	}
+}
+
+func swaggerInit()  {
+	docs.SwaggerInfo.Title = "Swagger Example API"
+	docs.SwaggerInfo.Description = "This is a sample server Petstore server."
+	docs.SwaggerInfo.Version = "1.0"
+	docs.SwaggerInfo.Host = fmt.Sprintf("%s:%d", config.Server.Address, config.Server.Port)
+	docs.SwaggerInfo.BasePath = "/"
+	docs.SwaggerInfo.Schemes = []string{"http", "https"}
 }
 
 func close()  {

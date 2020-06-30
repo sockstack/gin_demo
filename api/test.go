@@ -7,6 +7,16 @@ import (
 	"net/http"
 )
 
+// test api
+// @Summary 测试api
+// @Description 通过接收username返回字符串
+// @ID test-api
+// @Accept  x-www-form-urlencoded
+// @Produce  json
+// @Param username path string true "用户名"
+// @Success 200 {object} string
+// @Header 200 {string} Token "qwerty"
+// @Router /test [get]
 func Test(c *gin.Context)  {
 	//实例化一个TestRequest结构体，用于接收参数
 	testStruct := requests.TestRequest{}
