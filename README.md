@@ -1,7 +1,9 @@
 # gin_demo
-gin实践 http://book.sockstack.cn/gin
 
-教程地址：[gin从入门到实践](https://www.kancloud.cn/lhj0702/sockstack_gin)
+教程地址：
+
+看云：[gin从入门到实践](https://www.kancloud.cn/lhj0702/sockstack_gin)
+博客：[gin从入门到实践](https://book.sockstack.cn/gin)
 
 gin实践系列
 
