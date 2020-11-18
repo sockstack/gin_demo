@@ -5,7 +5,7 @@ gin实践 http://book.sockstack.cn/gin
 
 gin实践系列\
 
-目录：\
+目录：
 
 快速入门\
 项目结构\
