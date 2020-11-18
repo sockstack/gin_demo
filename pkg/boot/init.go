@@ -18,9 +18,6 @@ func Run()  {
 	//设置运行模式
 	setMode()
 
-	//注册路由
-	routers.Init(Gin)
-
 	// 监听并在 0.0.0.0:8080 上启动服务
 	Gin.Run(
 		fmt.Sprintf(
@@ -33,6 +30,8 @@ func Run()  {
 }
 
 func bootInit()  {
+	//注册路由
+	routers.Init(Gin)
 	models.Init()
 	swaggerInit()
 }
