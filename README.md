@@ -3,9 +3,10 @@
 教程地址：
 
 看云：[gin从入门到实践](https://www.kancloud.cn/lhj0702/sockstack_gin)
-博客：[gin从入门到实践](https://book.sockstack.cn/gin)
 
 gin实践系列
+
+![](https://cover.kancloud.cn/lhj0702/sockstack_gin!middle)
 
 目录：
 
